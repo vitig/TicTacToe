@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+    <script src="https://unpkg.com/vue@2.2.2"></script>
+
+</head>
+
+<body>
+
+    <div id="app" class="field">
+        <cell v-for="el in numCell" :id="el.id" @ai-turn="aiMove" :clickable='cellStatus' :class="{'wincombo':el.status}"></cell>
+        <span class="result-message">{{resMessage}}</span> </div>
+
+    <template id="cross-template">
+        <span class="symbol" >X</span>
+        </template>
+    <template id="zero-template">
+        <span class="symbol" >O</span>
+    </template>
+
+    <template id="cell-template">
+        <div class="cell empty" @click="playerClick()">
+            <component :is="currentSign"></component>
+        </div>
+    </template>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
