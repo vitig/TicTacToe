@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body>
 
     <div id="app" class="field">
-        <cell v-for="el in numCell" :id="el.id" @ai-turn="aiMove" :clickable='cellStatus' :class="{'wincombo':el.status}"></cell>
+        <cell v-for="el in cellArray" :id="el.id" @ai-turn="aiMove" :clickable='cellStatus' :class="{'wincombo':el.wcomb}"></cell>
         <span class="result-message">{{resMessage}}</span> </div>
 
     <template id="cross-template">
